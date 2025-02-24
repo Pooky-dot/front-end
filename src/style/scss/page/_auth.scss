@@ -1,0 +1,317 @@
+@use "../abstracts/variable" as var;
+@use "../abstracts/mixin" as mixin;
+
+.signup-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 2rem;
+  padding: 1rem;
+}
+
+// 상단 로고( DREAM ON ) 등 전체 컨테이너
+.signup-left-form-container {
+  position: relative;
+  width: 100%;
+  max-width: 60rem; /* 최대 너비 60rem 유지 */
+  /* 높이는 콘텐츠에 따라 유동적으로 변경되도록 auto 처리 (원래 75rem) */
+  height: auto;
+  background: #fff;
+  border-radius: 1.25rem;
+  overflow: hidden;
+}
+
+.signup-right-img-container {
+  max-width: 60rem; /* 최대 너비 60rem */
+  max-height: 73rem;
+  margin-top: 1.5rem;
+  background: #fff;
+  border-radius: 2rem;
+  overflow: hidden;
+  position: relative;
+
+  img {
+    width: 100%;
+    display: block;
+
+    height: auto;
+  }
+  .big-title {
+    bottom: 13rem;
+    left: 3rem;
+    color: white;
+    font-family: Poppins;
+    font-size: 4rem;
+    font-style: normal;
+    font-weight: 600;
+    line-height: normal;
+    position: absolute;
+  }
+  .small-title {
+    bottom: 10.5rem;
+    left: 3rem;
+    color: white;
+    font-family: Poppins;
+    font-size: 1.7rem;
+    font-style: normal;
+    font-weight: 300;
+    line-height: normal;
+    position: absolute;
+  }
+  .signup-right-subtitle {
+    font-size: 1.2rem;
+    top: 2rem;
+    right: 3rem;
+    color: white;
+    position: absolute;
+  }
+}
+/* 오른쪽 큰 이미지 + 문구 영역 */
+.signup-right {
+  width: 100%;
+  max-width: 61.25rem; /* 최대 너비 61.25rem */
+  height: auto;
+  margin: 1.75rem auto 0; /* 위쪽 여백과 중앙 정렬 */
+
+  .signup-right-bg {
+    width: 100%;
+    /* 높이는 콘텐츠에 맞게 auto 처리 */
+    background: #fff;
+    border-radius: 2.5rem;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+
+    img {
+      width: 100%;
+      height: auto;
+      object-fit: cover;
+    }
+  }
+
+  .signup-right-text1 {
+    width: 100%;
+    max-width: 33rem; /* 최대 너비 33rem */
+    margin: 1rem auto; /* 위아래 여백 및 중앙 정렬 */
+
+    .big-title {
+      color: #fff;
+      font-size: 3.33rem;
+      font-weight: 600;
+      word-wrap: break-word;
+      margin-bottom: 0.5rem;
+      text-align: center;
+    }
+    .small-title {
+      width: 100%;
+      margin-top: 5.33rem;
+      color: #fff;
+      font-size: 1.67rem;
+      font-weight: 300;
+      word-wrap: break-word;
+      text-align: center;
+    }
+  }
+
+  .signup-right-subtitle {
+    margin: 2rem auto 0;
+    color: #fff;
+    font-size: 1.25rem;
+    font-weight: 400;
+  }
+}
+
+/* 왼쪽 회원가입 폼 영역 */
+.signup-left {
+  width: 100%;
+  max-width: 35.92rem;
+  margin: 12.5rem auto 0; /* 상단 여백은 그대로, 좌우 중앙 정렬 */
+}
+.signup-form input {
+  margin-bottom: 1rem;
+}
+.signup-left .signup-top {
+  width: 100%;
+  /* height는 콘텐츠에 따라 auto 처리 */
+  height: auto;
+  padding: 0 1rem;
+}
+
+.signup-left .signup-top .signup-title-area {
+  width: 100%;
+
+  margin: 0 auto 2rem auto;
+}
+
+.signup-left .signup-top .signup-title-area .signup-title {
+  margin-top: 5rem;
+  color: #000;
+  font-size: 3.5rem;
+  font-weight: 500;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.signup-left .signup-top .signup-title-area .signup-subinfo {
+  width: 100%;
+  max-width: 25.67rem;
+  margin-top: 2rem;
+}
+
+.signup-left .signup-top .signup-title-area .signup-subinfo .already {
+  width: 100%;
+  max-width: 25.67rem;
+  color: #000;
+  font-size: 1.33rem;
+  font-weight: 400;
+  word-wrap: break-word;
+  text-align: left;
+}
+
+.signup-left .signup-top .signup-title-area .signup-subinfo .goto-login {
+  width: 100%;
+  max-width: 25.67rem;
+  margin-top: 1.25rem; /* 기존 2.5rem의 절반으로 줄임 */
+  color: #ff9191;
+  font-size: 1.33rem;
+  font-weight: 600;
+  word-wrap: break-word;
+  cursor: pointer;
+  text-align: left;
+}
+
+.signup-left .signup-top .signup-form-area {
+  width: 100%;
+
+  padding: 0 1rem;
+}
+
+.signup-left .signup-top .signup-form-area form {
+  display: flex;
+  flex-direction: column;
+}
+
+.signup-left .signup-top .signup-form-area form .input-wrapper {
+  width: 100%;
+  margin-bottom: 1.67rem;
+}
+
+.signup-left .signup-top .signup-form-area form .input-wrapper label {
+  display: block;
+  color: #999;
+  font-size: 1.08rem;
+  font-weight: 500;
+  margin-bottom: 0.335rem; /* 기존 0.67rem의 절반으로 줄임 */
+}
+
+.signup-left .signup-top .signup-form-area form .input-wrapper input {
+  width: 100%;
+  border: none;
+  border-bottom: 0.17rem solid #000;
+  outline: none;
+  font-size: 1.33rem;
+  font-weight: 400;
+  padding: 0.33rem 0;
+}
+
+.signup-left .signup-top .signup-form-area form .input-wrapper.password input {
+  border-bottom-color: #999;
+}
+
+.signup-left .signup-top .signup-form-area form .options {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2.5rem;
+}
+
+.signup-left .signup-top .signup-form-area form .options .remember-me {
+  display: flex;
+  align-items: center;
+}
+
+.signup-left
+  .signup-top
+  .signup-form-area
+  form
+  .options
+  .remember-me
+  input[type="checkbox"] {
+  margin-right: 0.5rem;
+}
+
+.signup-left .signup-top .signup-form-area form .options .remember-me label {
+  color: #000;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.signup-left .signup-top .signup-form-area form .options .forgot-pw {
+  color: #4d4d4d;
+  font-size: 1rem;
+  font-weight: 300;
+  cursor: pointer;
+}
+
+.signup-left .signup-top .signup-form-area form .signup-button {
+  width: 100%;
+  max-width: 35.75rem;
+  height: 4.42rem;
+  background: #ff9191;
+  box-shadow: 0 0.33rem 2.17rem rgba(0, 0, 0, 0.25);
+  border-radius: 2.67rem;
+  border: none;
+  cursor: pointer;
+  margin: 0 auto;
+}
+
+.signup-left .signup-top .signup-form-area form .signup-button span {
+  color: #fff;
+  font-size: 1.42rem;
+  font-weight: 500;
+}
+
+.signup-left .other-method {
+  color: #b5b5b5;
+  font-size: 1.33rem;
+  font-weight: 500;
+  word-wrap: break-word;
+  margin-top: 4rem;
+  text-align: center;
+}
+
+/* 소셜 로그인 버튼 (구글 예시) */
+.social-login {
+  @include mixin.flex-center;
+  height: 6.13rem;
+
+  position: relative;
+}
+
+.gender-options {
+  display: flex;
+  gap: 20px;
+}
+
+.gender-options label {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+
+/* 미디어 쿼리: 화면 폭 768px 이하에서 레이아웃 및 폰트 크기 조정 */
+@media (max-width: 768px) {
+  .favicon {
+    position: static;
+    margin-bottom: 3rem;
+  }
+
+  .signup-right-img-container {
+    display: none;
+  }
+}
